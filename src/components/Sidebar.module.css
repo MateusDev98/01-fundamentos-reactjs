@@ -1,0 +1,63 @@
+.sidebar {
+  background: var(--gray-800);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Um detalhe interessante é que se o overflow não estiver definido como hidden por mais que tenhamos um border-radius o conteúdo muitas vezes se tivermos uma imagem pode não respeitar o border-radius fazendo com que a imagem em sit não tenha um border-radius pois ela acaba não respeitando as propriedades do elemento em que o border-radius foi aplicado e para ajustar isso temos que colocar o overflow hidden assim fazendo com que todo contéudo que sobreponha o limite do elemento pai fique escondido => https://developer.mozilla.org/pt-BR/docs/Web/CSS/overflow  */
+}
+
+.cover {
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: -2.1rem;
+}
+
+.avatar {
+  box-sizing: content-box; 
+  /* 
+  Essa é o estilo padrão, conforme especificado pela norma CSS. As propriedades width (largura) e height (altura) são medidas incluindo só o conteúdo, mas não o padding, border ou margin. Nota: Padding, border e margin serão fora da box. Exemplo.: Se .box {width: 350px} então se você aplicar uma propriedade {border: 10px solid black;} o resultado renderizado no navegador (browser) será .box {width: 370px;}
+
+  Quando definimos box-sizing: content-box ele vai fazer com que o elemento mantenha seu valor padrão de altura e largura e tudo que é padding ou border ou margin somem na altura e na largura desse elemento e não o esprema como é na funcionalidade do box-sizing: border-box => https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model - https://developer.mozilla.org/pt-BR/docs/Web/CSS/box-sizing */
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+  outline: 2px solid var(--green-500);
+  border: 4px solid var(--gray-800);
+  /* 
+  Alternativa para margens negativas
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -125%);
+  https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
+   */
+}
+
+.sidebar footer {
+  border-top: 1px solid var(--gray-600);
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.sidebar footer a {
+  background: transparent;
+  color: var(--green-500);
+  border: 1px solid var(--green-500);
+  border-radius: 8px;
+  height: 50px;
+  padding: 0 1.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Elementos que não são elementos de bloco (display: block) não podem ter larguras e alturas definidas como elementos que tem o display: inline => https://developer.mozilla.org/pt-BR/docs/Web/CSS/display - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-block-4e6cba2f19d4 - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-4ccb7b77371d#.n1g0wi2pc - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-block-98480c987950#.dxyvvpjbg - https://developer.mozilla.org/pt-BR/docs/Web/HTML/Block-level_elements - https://developer.mozilla.org/pt-BR/docs/Web/CSS/display - https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox */
