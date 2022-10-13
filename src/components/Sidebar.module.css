@@ -20,7 +20,7 @@
 }
 
 .avatar {
-  box-sizing: content-box; 
+  box-sizing: content-box;
   /* 
   Essa é o estilo padrão, conforme especificado pela norma CSS. As propriedades width (largura) e height (altura) são medidas incluindo só o conteúdo, mas não o padding, border ou margin. Nota: Padding, border e margin serão fora da box. Exemplo.: Se .box {width: 350px} então se você aplicar uma propriedade {border: 10px solid black;} o resultado renderizado no navegador (browser) será .box {width: 370px;}
 
@@ -37,6 +37,18 @@
   transform: translate(-50%, -125%);
   https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
    */
+}
+
+.profile strong {
+  margin-top: 1rem;
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.profile span {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  line-height: 1.6;
 }
 
 .sidebar footer {
@@ -58,6 +70,12 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  gap: 0.5rem;
+  transition: color 0.2s ease-in, background-color 0.2s ease-in;
+}
+.sidebar footer a:hover {
+  background: var(--green-500);
+  color: var(--white);
 }
 
 /* Elementos que não são elementos de bloco (display: block) não podem ter larguras e alturas definidas como elementos que tem o display: inline => https://developer.mozilla.org/pt-BR/docs/Web/CSS/display - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-block-4e6cba2f19d4 - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-4ccb7b77371d#.n1g0wi2pc - https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-block-98480c987950#.dxyvvpjbg - https://developer.mozilla.org/pt-BR/docs/Web/HTML/Block-level_elements - https://developer.mozilla.org/pt-BR/docs/Web/CSS/display - https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox */
