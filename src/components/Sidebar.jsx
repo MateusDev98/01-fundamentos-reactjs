@@ -1,4 +1,5 @@
 import { PencilSimpleLine } from "phosphor-react";
+import { Avatar } from "./Avatar";
 import styles from "./Sidebar.module.css";
 
 export function Sidebar() {
@@ -10,14 +11,11 @@ export function Sidebar() {
         alt=""
       />
       <div className={styles.profile}>
-        <img
-          className={styles.avatar}
-          src="https://avatars.githubusercontent.com/u/44756508?v=4"
-          alt=""
+        <Avatar
+          name="Mateus Lopes"
+          role="Web Developer"
+          infoPlacement="bottom"
         />
-        {/* Quando imagens são um input do usuário (dinamica baseado em cada user da aplicação) não colocamos texto alternativo " alt='' "  */}
-        <strong>John Doe</strong>
-        <span>Web developer</span>
       </div>
       <footer>
         <a href="#">
