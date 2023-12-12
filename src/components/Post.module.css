@@ -38,11 +38,13 @@
 /* Dica pessoal sempre utilize  flex-direction column quando estiver usando display em tags com display inline ou seja tags que tem o tamanho máximo igual ao do conteúdo, então usando o  flex-direction column ao invés de dar um valor 100% para cada uma por exemplo ou até mesmo um valor fixo/relativo para o elemento pai delas e depois um tamanho fixo/relativo para elas com o intuito de elas ficarem uma abaixo da outra com o flex wrap utilze o  flex-direction column que resolve esse problema.  Ou podemos até mesmo mudar o display desses elementos para um display block que dai ele vai ocupar todo o espaço independente do tamanho do conteúdo ou até mesmo se ele não existir usando isso em ambos os elementos vamos ter o efeito de quebra de linha/coluna por exemplo.*/
 
 .authorInfo strong {
+  display: block;
   color: var(--gray-100);
   line-height: 1.6;
 }
 
 .authorInfo span {
+  display: block;
   color: var(--gray-400);
   font-size: 0.875rem;
   line-height: 1.6;
@@ -128,9 +130,14 @@
   cursor: pointer;
 }
 
-.commentForm button[type="submit"]:hover {
+.commentForm button[type="submit"]:not(:disabled):hover {
   background: var(--green-300);
   transition: color 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+.commentForm button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 /* 1px solid var(--green-300) */
